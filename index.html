@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Clarity URL Generator</title>
+    <!-- Importing Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">💎</div>
+      <h1>CLARIFY</h1>
+      <h2>Debug with Microsoft Clarity</h2>
+
+      <!-- Settings Accordion -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel1">
+        Base URL Settings
+      </button>
+      <div class="panel" id="panel1">
+        <form id="baseUrlForm">
+          <input
+            type="url"
+            id="baseUrl"
+            name="baseUrl"
+            placeholder="Enter a URL (including https://)"
+            required
+          />
+          <button type="button" id="saveBaseUrlBtn">Save Base URL</button>
+          <div class="alert" id="saveAlert">Base URL saved successfully!</div>
+        </form>
+      </div>
+
+      <!-- Generate URL Accordion -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel2">
+        Generate URL
+      </button>
+      <div class="panel" id="panel2">
+        <form id="urlForm">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter user email"
+            required
+          />
+
+          <div class="session-id-container">
+            <input
+              type="text"
+              id="sessionId"
+              name="sessionId"
+              placeholder="Enter session ID"
+              class="input-half"
+              required
+              maxlength="25"
+            />
+            <div class="char-counter" id="charCounter">25 characters left</div>
+          </div>
+
+          <button type="submit">Generate URL</button>
+        </form>
+
+        <div id="output" class="output">
+          <input type="text" id="generatedUrl" readonly />
+          <button class="copy-btn" id="copyBtn">Copy to Clipboard</button>
+        </div>
+      </div>
+
+      <!-- Generate Email Hash Accordion -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel3">
+        Email to ID
+      </button>
+      <div class="panel" id="panel3">
+        <form id="hashForm">
+          <input
+            type="email"
+            id="hashEmail"
+            name="hashEmail"
+            placeholder="Enter an email to get it's ID"
+            required
+          />
+
+          <button type="submit" id="generateHashBtn">Generate Hash</button>
+        </form>
+
+        <div id="hashOutput" class="output">
+          <input type="text" id="generatedHash" readonly />
+          <div class="button-group">
+            <button class="edit-btn" id="editHashBtn">Edit Email</button>
+            <button class="copy-btn" id="copyHashBtn">Copy to Clipboard</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="footer">NEOBADGER</p>
+    <script src="./app.js"></script>
+  </body>
+</html>
